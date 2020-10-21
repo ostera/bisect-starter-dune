@@ -5,3 +5,5 @@ let run () =
     print_endline "Hello, world!"
   else
     print_endline "We come in peace."
+
+let () = run ()

@@ -1,13 +1,6 @@
-(library
- (name hello)
- (modules hello)
+(executable
+ (public_name hello)
  (instrumentation (backend bisect_ppx)))
 
-(executable
- (name tester)
- (modules tester)
- (libraries hello))
-
-(rule
- (alias runtest)
- (action (run %{exe:tester.exe})))
+(cram
+ (deps %{bin:hello}))
